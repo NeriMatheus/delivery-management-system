@@ -1,0 +1,28 @@
+# Build
+target/
+build/
+
+# Java
+*.class
+*.jar
+
+# IntelliJ
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# Logs
+*.log
+
+# OS
+.DS_Store
+
+# Maven wrapper (mantém)
+!.mvn/wrapper/maven-wrapper.jar
