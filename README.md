@@ -14,10 +14,14 @@ Delivery system developed in Java, focused on managing orders, customers, and de
 
 ## 📂 Project Structure
 src/
-├── controller
-├── service
-├── repository
-└── model
+├── app # Application entry point
+├── controller # Request handling
+├── service # Business logic
+├── repository # Data access
+├── model # Entities and domain models
+├── view # User interface / interaction
+├── util # Utility classes
+└── exception # Custom exceptions
 
 ---
 
