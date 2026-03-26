@@ -21,7 +21,7 @@ src/
 ├── model
 ├── view
 ├── util
-└── exception
+├── exception
 
 ---
 
