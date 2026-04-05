@@ -1,4 +1,4 @@
 package br.edu.ufvjm.delivery.model.entities;
 
-public class Product {
+public class Adminstrator extends User {
 }

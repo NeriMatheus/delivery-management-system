@@ -2,20 +2,19 @@ package br.edu.ufvjm.delivery.repository;
 
 import br.edu.ufvjm.delivery.model.entities.Order;
 
-import java.util.LinkedHashMap;
-import java.util.Map;
-import java.util.List;
+import java.util.ArrayList;
 
-import java.time.LocalDate;
-import java.time.LocalTime;
+public class OrderRepository {
 
-public class OrderRepository implements Repository<Order, String> {
+    private ArrayList<Order> orders = new ArrayList();
 
-    private final Map<String, Order> storage = new LinkedHashMap<>();
+    public void createOrder(Order order) {
+        orders.add(order);
+    }
 
-    public List<Order> findByDateRange(LocalDate startDate, LocalDate endDate, LocalTime startTime, LocalTime endTime) {}
+    public void removeOrder(Order order) {
+        orders.remove(order);
+    }
 
-    public List<Order> findByCustomer(String customerId) {}
 
-    public List<Order> findByDate(LocalDate date) {}
 }

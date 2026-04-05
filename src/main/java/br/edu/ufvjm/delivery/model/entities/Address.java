@@ -1,27 +1,80 @@
 package br.edu.ufvjm.delivery.model.entities;
 
-/**
- *  Classe record pois possui dados imutáveis de forma simples e concisa
- *  Classe record serve para modelar dados, evitando boilerplate
- *  Classe record automaticamente gera getters, construtores, toString, equals() e hashCode()
- */
+public class Address {
 
-public record Address(String street, String number, String neighborhood, String city, String zipCode) {
+    private String street;
+    private String number;
+    private String neighborhood;
+    private String city;
+    private String state;
+    private String zipCode;
 
-    public Address {
-        if (street == null || street.isBlank() || number == null || number.isBlank() || neighborhood == null || neighborhood.isBlank() || city == null || city.isBlank() || zipCode == null || zipCode.isBlank()) {
+    // Constructors
+    public Address(String street, String number, String neighborhood, String state, String city, String zipCode) {
+        this.street = street;
+        this.number = number;
+        this.neighborhood = neighborhood;
+        this.state = state;
+        this.city = city;
+        this.zipCode = zipCode;
+    }
 
-            throw new IllegalArgumentException("No field can be empty.");
-        }
+    //  Getters and setters
+
+    public String getStreet() {
+        return street;
+    }
+
+    public void setStreet(String street) {
+        this.street = street;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public void setNumber(String number) {
+        this.number = number;
+    }
+
+    public String getNeighborhood() {
+        return neighborhood;
+    }
+
+    public void setNeighborhood(String neighborhood) {
+        this.neighborhood = neighborhood;
+    }
+
+    public String getState() {
+        return state;
+    }
+
+    public void setState(String state) {
+        this.state = state;
+    }
+
+    public String getZipCode() {
+        return zipCode;
+    }
+
+    public void setZipCode(String zipCode) {
+        this.zipCode = zipCode;
+    }
+
+    public String getCity() {
+        return city;
+    }
+
+    public void setCity(String city) {
+        this.city = city;
     }
 
     public String getFullAddress() {
-        return street + " - " + number + " - " + neighborhood + " - " + city + " - " + zipCode;
+        return getStreet() + ", " + getNumber() + " - " + getNeighborhood() + " - " + getCity() + "/" + getState() + " - " + getZipCode();
     }
 
     @Override
     public String toString() {
         return getFullAddress();
     }
-
 }

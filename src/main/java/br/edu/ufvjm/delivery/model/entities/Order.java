@@ -1,28 +1,45 @@
 package br.edu.ufvjm.delivery.model.entities;
 
-import br.edu.ufvjm.delivery.model.enums.OrderStatus;
-import br.edu.ufvjm.delivery.model.entities.OrderItem;
-
 import java.time.LocalDate;
-import java.time.LocalTime;
-
-import java.util.List;
-import java.util.ArrayList;
-
-import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 public class Order {
 
-    private String id;
-    private LocalDate orderDate;
-    private LocalTime orderTime;
-    private LocalTime deliveryTime;
-    private OrderStatus status;
-    private Customer customer;
-    private Employee employee;
-    private List<OrderItem> items;
+    private LocalDateTime date;
+    private LocalDateTime time;
+    private int idDescription;
+    private int idAddOn;
 
-    public BigDecimal calculateTotal() {}
-    public void addItem(OrderItem item) {}
-    public void removeItem(String itemId) {}
+    // Constructors
+    public Order(LocalDateTime date, LocalDateTime time, int idAddOn, int idDescription) {
+        this.date = date;
+        this.time = time;
+        this.idAddOn = idAddOn;
+        this.idDescription = idDescription;
+    }
+
+    // Getters and setters
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
+
+    public LocalDateTime getTime() {
+        return time;
+    }
+
+    public void setTime(LocalDateTime time) {
+        this.time = time;
+    }
+
+    public int getIdDescription() {
+        return idDescription;
+    }
+
+    public int getIdAddOn() {
+        return idAddOn;
+    }
 }
