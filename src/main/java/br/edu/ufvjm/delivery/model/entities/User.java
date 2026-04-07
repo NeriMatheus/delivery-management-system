@@ -1,6 +1,6 @@
 package br.edu.ufvjm.delivery.model.entities;
 
-public class User {
+public abstract class User {
 
     protected String login;
     protected String password;
@@ -25,5 +25,12 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public abstract boolean autenticate(String login, String password);
+
+    @Override
+    public String toString() {
+        return "...";
     }
 }
