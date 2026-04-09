@@ -1,29 +1,47 @@
 package br.edu.ufvjm.delivery.model.entities;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.Comparator;
 
-public class Customer {
+public class Customer implements Comparator<Customer> {
 
-    private int idCustomer;
+    // Access modifier private
+    private static int privateCounter = 0;
+
+    // Access modifier protected
+    protected static int protectedCounter = 0;
+
+    private int customerId;
     private String name;
     private Phone phone;
     private Address address;
-
-    private ArrayList<Order> order;
+    private List<Order> order;
+    private int lastOrderId;
 
     // Constructors
-    public Customer(int id, Phone phone, String name, Address address, ArrayList<Order> order) {
-        this.idCustomer = id;
-        this.phone = phone;
+    public Customer(int id, Phone phone, String name, Address address) {
+        privateCounter++;
+        protectedCounter++;
+        this.customerId = id;
         this.name = name;
+        this.phone = phone;
         this.address = address;
-        this.order = order;
     }
 
     //Getters and setters
-    public int getIdCustomer() {
-        return idCustomer;
+    public static int getPrivateCounter() {
+        return   privateCounter;
     }
+
+    public static void setPrivateCounter(int v){
+        privateCounter = v;
+    }
+
+    public int getCustomerId() {
+        return customerId;
+    }
+
     public String getName() {
         return name;
     }
@@ -46,5 +64,9 @@ public class Customer {
 
     public void setAddress(Address address) {
         this.address = address;
+    }
+
+    @Override
+    public String toString() {
     }
 }
